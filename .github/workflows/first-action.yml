@@ -10,4 +10,13 @@ jobs:
         run: echo "Done - bye!"
       - name: List command
         run: ls -l
+      - name: Branch command
+        run: echo "Raw branch = $(Build.SourceBranch)"
+      - name: Raw Branch
+        run: echo "Raw branch = $(Build.SourceBranch)"
+      - name: CR brch
+        run: echo "Cleaned branch = $branch"
+      
+        
+        
         
