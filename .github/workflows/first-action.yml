@@ -1,12 +1,13 @@
 name: First Workflow
-'on': workflow_dispatch
+on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print branch
-        run: echo "Raw branch = $(Build.SourceBranch)"
-      - name: Print goodbye
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
         run: echo "Done - bye!"
+      - name: List command
+        run: ls -l
+        
