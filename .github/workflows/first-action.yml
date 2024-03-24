@@ -16,6 +16,8 @@ jobs:
         run: echo "Raw branch = $(Build.SourceBranch)"
       - name: CR brch
         run: echo "Cleaned branch = $branch"
+
+        
         
       
         
