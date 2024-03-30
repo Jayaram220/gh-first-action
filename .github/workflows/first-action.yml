@@ -11,7 +11,7 @@ jobs:
       - name: Checkout tools repo
         uses: actions/checkout@v4
         with:
-          path: branc1_ver1
+          ref: branc1_ver1
       - name: print done
         run: echo "Done - bye!"
       - name: List command
