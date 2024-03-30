@@ -8,11 +8,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: main
-
       - name: Checkout tools repo
         uses: actions/checkout@v4
         with:
-          repository: gh-first-action/branc1_ver1
           path: branc1_ver1
       - name: print done
         run: echo "Done - bye!"
