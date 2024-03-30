@@ -7,7 +7,7 @@ jobs:
       - name: Get the code
         uses: actions/checkout@v4
         with:
-          ref: my-branch
+          ref: main
       - name: print done
         run: echo "Done - bye!"
       - name: List command
