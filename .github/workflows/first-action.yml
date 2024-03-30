@@ -7,9 +7,7 @@ jobs:
       - name: Get the code
         uses: actions/checkout@v4
         with:
-          sparse-checkout: |
-            hello.txt
-          sparse-checkout-cone-mode: false
+          fetch-depth: 0
       - name: print done
         run: echo "Done - bye!"
       - name: List command
