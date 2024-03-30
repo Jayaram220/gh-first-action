@@ -1,12 +1,16 @@
 name: First Workflow
-on: workflow_dispatch
+'on': workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
-        uses: actions/checkout@v3
-      - name: Install NodeJS
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            hello.txt
+          sparse-checkout-cone-mode: false
+      - name: print done
         run: echo "Done - bye!"
       - name: List command
         run: ls -l
@@ -16,10 +20,6 @@ jobs:
         run: echo "Raw branch = $(Build.SourceBranch)"
       - name: CR brch
         run: echo "Cleaned branch = $branch"
-
-        
-        
-      
         
         
         
