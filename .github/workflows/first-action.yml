@@ -1,7 +1,13 @@
 name: First Workflow
 'on': workflow_dispatch
+env:
+  MNG_NAME: gha-demo
 jobs:
   first-job:
+    env: 
+      MNG_CLSTR_ADDR: xyz
+      MNG_NAME: qwe
+      MNG_PWD: rt 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,12 +22,19 @@ jobs:
         run: echo "Done - bye!"
       - name: List command
         run: ls -l
-      - name: Branch command
-        run: echo "Raw branch = $(Build.SourceBranch)"
+      - name: Output information
+        run: echo "MNG_NAME:${{ env.MNG_NAME }}"
       - name: Raw Branch
         run: echo "Raw branch = $(Build.SourceBranch)"
-      - name: CR brch
-        run: echo "Cleaned branch = $branch"
+  deploy:
+    needs: first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: |        
+          echo "MNG_NAME:${{ env.MNG_NAME }}"
+    
+  
         
         
         
