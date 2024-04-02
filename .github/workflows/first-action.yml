@@ -24,8 +24,6 @@ jobs:
         run: ls -l
       - name: Output information
         run: echo "MNG_NAME:${{ env.MNG_NAME }}"
-      - name: Raw Branch
-        run: echo "Raw branch = $(Build.SourceBranch)"
   deploy:
     needs: first-job
     runs-on: ubuntu-latest
